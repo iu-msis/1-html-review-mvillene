@@ -39,6 +39,9 @@ form {
     padding-left: 175px;
     background-color: crimson;
 }
+#refreshbutton{
+  padding-left: 200px;
+}
 .background{
   color: white;
   background-color: crimson;
