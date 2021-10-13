@@ -15,8 +15,8 @@ CREATE TABLE `Book` (
 
 
 INSERT INTO Book ( Title, Author, Year_Published,Publisher,Pages, MSRP ) VALUES 
-('Moby Dick','Herman Melville',1851,'CreateSpace Independent Publishing Platform',378,$13.45),
-('To Kill a Mockingbird','Harper Lee',1960,'Harper Perennial',336,$7.19),
-('Old Man and the Sea','Ernest Hemingway',1952,'Schribner, Reissue Edition',128,$11.49),
-('A Tale of Two Cities','Charles Dickens',1859,'CreateSpace Independent Publishing Platform',288,$9.99);
+('Moby Dick','Herman Melville',1851,'CreateSpace Independent Publishing Platform',378,13.45),
+('To Kill a Mockingbird','Harper Lee',1960,'Harper Perennial',336,7.19),
+('Old Man and the Sea','Ernest Hemingway',1952,'Schribner, Reissue Edition',128,11.49),
+('A Tale of Two Cities','Charles Dickens',1859,'CreateSpace Independent Publishing Platform',288,9.99);
 
