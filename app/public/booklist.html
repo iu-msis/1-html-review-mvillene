@@ -60,23 +60,23 @@
                 </div>
                 <div class="mb-3">
                   <label for="Author" class="form-label">Author</label>
-                  <input type="number" v-model="bookForm.Author" class="form-control" id="Author">
+                  <input type="text" v-model="bookForm.Author" class="form-control" id="Author">
                 </div>
                 <div class="mb-3">
                   <label for="Year_Published" class="form-label">Year_Published</label>
-                  <input type="number" v-model="bookForm.Year_Published" class="form-control" id="Year_Published">
+                  <input type="date" v-model="bookForm.Year_Published" class="form-control" id="Year_Published">
                 </div>
                 <div class="mb-3">
                   <label for="Publisher" class="form-label">Publisher</label>
-                  <input type="date" v-model="bookForm.Publisher" class="form-control" id="Publisher">
+                  <input type="text" v-model="bookForm.Publisher" class="form-control" id="Publisher">
                 </div>
                 <div class="mb-3">
                   <label for="Pages" class="form-label">Pages</label>
-                  <input type="date" v-model="bookForm.Pages" class="form-control" id="Pages">
+                  <input type="number" v-model="bookForm.Pages" class="form-control" id="Pages">
                 </div>
                 <div class="mb-3">
                   <label for="MSRP" class="form-label">MSRP</label>
-                  <input type="date" v-model="bookForm.MSRP" class="form-control" id="MSRP">
+                  <input type="number" v-model="bookForm.MSRP" class="form-control" id="MSRP">
                 </div>
                 <button type="submit" class="btn btn-primary">Add Book</button>
               </form>

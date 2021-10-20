@@ -29,7 +29,7 @@ const Offer = {
             return "$ " + d;
         },
         fetchBookData(){
-            fetch('/api/books/')
+            fetch('/api/books/index.php')
             .then( response => response.json() )
             .then( (responseJson) => {
                 console.log(responseJson);

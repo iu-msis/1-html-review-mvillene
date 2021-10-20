@@ -5,7 +5,6 @@ const Offer = {
         Book: [],
         bookForm: {}
         }
-        
     },
     computed: {
         prettyBirthday() {
