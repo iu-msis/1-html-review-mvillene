@@ -23,15 +23,9 @@
                     </div>
     </header>
     <body>
-        <div id="nav">
-        </div>
         <div class="background">
-        <br>
-           <br>
         <div id="mid">
-            <br>
-            <br>
-            <div class="container">
+            <div id="offerApp" class="container">
                 <div class="row">
                   <!-- This code was based on https://getbootstrap.com/docs/4.0/content/tables/ -->
                   <!-- All book MSRP is based on Amazon.com -->
@@ -47,92 +41,62 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td>Moby Dick</td>
-                        <td>Herman Melville</td>
-                        <td>1851</td>
-                        <td>CreateSpace Independent Publishing Platform</td>
-                        <td>378</td>
-                        <td>13.45</td>
+                      <tr v-for="i in Book">
+                          <td>{{ i.Title }}</td>
+                          <td>{{ i.Author }}</td>
+                          <td>{{ i.Year_Published }}</td>
+                          <td>{{ i.Publisher }}</td>
+                          <td>{{ i.Pages }}</td>
+                          <td>{{ prettyDollar(i.MSRP) }}</td>
                       </tr>
-                      <tr>
-                        <td>To Kill a Mockingbird</td>
-                        <td>Harper Lee</td>
-                        <td>1960</td>
-                        <td>Harper Perennial</td>
-                        <td>336</td>
-                        <td>7.19</td>
-                      </tr>
-                      <tr>
-                        <!-- <td>Old Man and the Sea</td>
-                        <td>Ernest Hemingway</td>
-                        <td>1952</td>
-                        <td>Schribner, Reissue Edition</td>
-                        <td>128</td>
-                        <td>11.49</td>
-                      </tr>
-                      <tr>
-                        <td>A Tale of Two Cities</td>
-                        <td>Charles Dickens</td>
-                        <td>1859</td>
-                        <td>CreateSpace Independent Publishing Platform</td>
-                        <td>288</td>
-                        <td>9.99</td>
-                      </tr> -->
-                      <tr v-for="book in books">
-                        <td>{{ book.Title }}</td> 
-                        <td>{{ book.Author }}</td> 
-                        <td>{{ book.Year_Published }}</td> 
-                        <td>{{ book.Publisher }}</td> 
-                        <td>{{ book.Pages }}</td> 
-                        <td>{{ book.MSRP }}</td>
-                      </tr>
-                    </tbody>
-                  </table>
-		          </div>
-            </div>
-              <h2>Add New Books!</h2>
-              <!-- This code was based on https://getbootstrap.com/docs/4.3/components/forms/ -->
-            <div class="container">
-              <form>
-                <div class="form-group">
-                  <label for="InputTitle">Title</label>
-                  <input type="title" class="form-control" id="InputTitle" placeholder="Enter Title">
+                  </tbody>
+              </table>
+  
+              <form v-on:submit.prevent="postBookOffer">
+                <div class="mb-3">
+                  <label for="Title" class="form-label">Title</label>
+                  <input type="text" v-model="bookForm.Title"
+                   class="form-control" id="Title">
                 </div>
-                <div class="form-group">
-                  <label for="InputAuthor">Author</label>
-                  <input type="author" class="form-control" id="InputAuthor" placeholder="Enter Author">
+                <div class="mb-3">
+                  <label for="Author" class="form-label">Author</label>
+                  <input type="number" v-model="bookForm.Author" class="form-control" id="Author">
                 </div>
-                <div class="form-group">
-                  <label for="InputPubDate">Publication Date</label>
-                  <input type="pubdate" class="form-control" id="InputPubDate" placeholder="Enter Publication Date">
+                <div class="mb-3">
+                  <label for="Year_Published" class="form-label">Year_Published</label>
+                  <input type="number" v-model="bookForm.Year_Published" class="form-control" id="Year_Published">
                 </div>
-                <div class="form-group">
-                  <label for="InputPublisher">Publisher</label>
-                  <input type="publisher" class="form-control" id="InputPublisher" placeholder="Enter Publisher">
+                <div class="mb-3">
+                  <label for="Publisher" class="form-label">Publisher</label>
+                  <input type="date" v-model="bookForm.Publisher" class="form-control" id="Publisher">
                 </div>
-                <div class="form-group">
-                  <label for="InputPgCount">Page Count</label>
-                  <input type="pgcount" class="form-control" id="InputPgCount" placeholder="Enter Page Count">
+                <div class="mb-3">
+                  <label for="Pages" class="form-label">Pages</label>
+                  <input type="date" v-model="bookForm.Pages" class="form-control" id="Pages">
                 </div>
-                <div class="form-group">
-                  <label for="InputMSRP">MSRP</label>
-                  <input type="MSRP" class="form-control" id="InputMSRP" placeholder="Enter MSRP (Book Cost in Dollars)">
+                <div class="mb-3">
+                  <label for="MSRP" class="form-label">MSRP</label>
+                  <input type="date" v-model="bookForm.MSRP" class="form-control" id="MSRP">
                 </div>
+                <button type="submit" class="btn btn-primary">Add Book</button>
               </form>
-              <a href="booklist.html" class="button"> Submit</a>
+
             </div>
-        <br>
-        <br>
+  
+          </div>
+  
         </div>
-    </div>
+
+
+   </div>
     </body>
-        <footer>
-          <script src="js/index.js"></script>
           <!-- Tablesort from http://tristen.ca/tablesort/demo/ -->
           <script src="js/tablesort.min.js"></script>
+          <script src="js/books.js"></script>
           <script>
             new Tablesort(document.getElementById('books'));
           </script>
-        </footer>
+          <!-- Bootstrap Bundle with Popper -->
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+          <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
 </html>

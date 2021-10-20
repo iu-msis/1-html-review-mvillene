@@ -4,7 +4,6 @@ const Offer = {
         person: undefined,
         Book: [],
         bookForm: {}
-
         }
         
     },
@@ -15,6 +14,10 @@ const Offer = {
         }
     },
     methods: {
+        prettyDollar(n) {
+            const d = new Intl.NumberFormat("en-US").format(n);
+            return "$ " + d;
+        }
         fetchUserData(){
             console.log("A");
             fetch('https://randomuser.me/api/')
@@ -30,5 +33,4 @@ const Offer = {
             console.log("B");
 
         },
-
 console.log("Z");
